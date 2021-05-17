@@ -1,0 +1,15 @@
+class Solution {
+    //refer techdose youtube for comprehensive understanding, works on both +ve ,-ve value array
+    public int maxSubArray(int[] nums) {
+       int maxSoFar=Integer.MIN_VALUE; int currSum=0;
+       for(int i=0;i<nums.length;i++){
+           currSum = currSum+nums[i];
+           if(currSum<nums[i])
+               currSum=nums[i]; // so that we take a greater value in sum
+           if(currSum>maxSoFar)
+               maxSoFar=currSum;
+           
+       }
+        return maxSoFar;
+    }
+}
